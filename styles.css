@@ -42,3 +42,12 @@ div textarea {
     border-right: none;
     border-color: #E5E1DA;
 }
+
+div #submit-button {
+    border: none;
+    background-color: #92C7CF;
+    border-radius: 5px;
+    color: #FBF9F1;
+    height: 30px;
+    width: 80px;
+}
