@@ -16,7 +16,7 @@ body {
 
 form {
     width: 550px;
-    height: 450px;
+    min-height: 450px;
     background-color: #FBF9F1;
     margin: 100px auto 0;
     padding: 60px 40px 0px 30px;
@@ -76,5 +76,6 @@ div #submit-button {
     font-size: 15px;
     height: 45px;
     width: 125px;
-    text-align: center;
+    margin-bottom: 20px;
+    line-height: 45px;
 }
