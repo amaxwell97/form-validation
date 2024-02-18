@@ -14,23 +14,32 @@ body {
     background: linear-gradient(135deg, #92C7CF, #AAD);
 }
 
+/* .master-container {
+    position: relative;
+} */
+
+form {
+    width: 550px;
+    height: 450px;
+    background-color: #FBF9F1;
+    margin: 100px auto 0;
+    padding: 60px 40px 0px 30px;
+    border-radius: 5px;
+}
+
 div.top-icon {
     background-color: #fff;
     border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0, 0.19);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    font-size: 35px;
     text-align: center;
-    margin: 35px auto 0;
+    margin: -100px auto 30px;
     height: 70px;
     width: 70px;
 }
-
-form {
-    width: 450px;
-    height: 600px;
-    background-color: #FBF9F1;
-    margin: -30px auto 0;
-    padding: 60px 40px 0px 30px;
-}
-
 .inputs {
     margin-bottom: 30px;
     display: flex;
@@ -44,7 +53,7 @@ div input {
     border-left: none;
     border-right: none;
     border-color: #E5E1DA;
-    width: 250px;
+    width: 325px;
 }
 
 div textarea {
@@ -53,7 +62,7 @@ div textarea {
     border-left: none;
     border-right: none;
     border-color: #E5E1DA;
-    width: 250px;
+    width: 325px;
 }
 
 .submit-container {
