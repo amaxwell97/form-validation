@@ -50,6 +50,7 @@ div input {
     border-right: none;
     border-color: #E5E1DA;
     width: 325px;
+    padding-bottom: 10px;
 }
 
 div textarea {
