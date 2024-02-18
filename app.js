@@ -22,6 +22,22 @@ const produceError = () => {
     }
 }
 
+const enteredBadName = () => {
+    let usersName = (nameInputField.value).toLowerCase();
+    let blankSpaceIndex = usersName.indexOf(' ');
+    
+    if (usersName == '') {
+        
+    } else if () {
+
+    } else if (userName[(blankSpaceIndex + 1)] == '' || userName[(blankSpaceIndex + 1)] == ' ') {
+
+    }
+
+    // Working to display "Name is required" or "Please enter full name" if the user has not done so
+}
+
 submitButton.addEventListener('click', () => {
+    enteredBadName();
     produceError();
 })
