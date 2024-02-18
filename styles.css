@@ -56,6 +56,12 @@ div textarea {
     width: 250px;
 }
 
+.submit-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 div #submit-button {
     border: none;
     background-color: #92C7CF;
@@ -63,4 +69,5 @@ div #submit-button {
     color: #FBF9F1;
     height: 30px;
     width: 80px;
+    text-align: center;
 }
