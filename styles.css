@@ -14,10 +14,6 @@ body {
     background: linear-gradient(135deg, #92C7CF, #AAD);
 }
 
-/* .master-container {
-    position: relative;
-} */
-
 form {
     width: 550px;
     height: 450px;
@@ -76,7 +72,8 @@ div #submit-button {
     background-color: #92C7CF;
     border-radius: 5px;
     color: #FBF9F1;
-    height: 30px;
-    width: 80px;
+    font-size: 15px;
+    height: 45px;
+    width: 125px;
     text-align: center;
 }
