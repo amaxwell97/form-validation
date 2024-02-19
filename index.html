@@ -16,18 +16,22 @@
                 <div class="inputs name-conatiner">
                     <label for="name-input">Full Name</label>
                     <input type="text" name="name-input" id="name-input" placeholder="Enter your name">
+                    <span id="name-error">name is required</span>
                 </div>
                 <div class="inputs phone-container">
                     <label for="num-input">Phone No.</label>
                     <input type="tel" name="num-input" id="num-input" placeholder="123 456 7890">
+                    <span id="phone-error">phone number is required</span>
                 </div>
                 <div class="inputs email-container">
                     <label for="email-input">Email Address</label>
                     <input type="email" name="email-input" id="email-input" placeholder="Enter Email">
+                    <span id="email-error">email address is required</span>
                 </div>
                 <div class="inputs message-container">
                     <label for="message-input">Your Message</label>
                     <textarea name="message-input" id="message-input" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                    <span id="message-error">a message is required</span>
                 </div>
                 <div class="submit-container">
                     <input type="submit" value="Submit" name="submit-form" id="submit-button">
