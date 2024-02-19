@@ -35,19 +35,42 @@ submitButton.addEventListener('click', () => {
 
 const validateName = () => {
     const name = nameInputField.value;
+    console.log(name);
 
     if (name.length == 0) {
         nameError.innerHTML = 'Name is required';
         return false;
     }
-    if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*&/)) {
+    if (!name.match(/^[a-zA-Z]*\s{1}[a-zA-Z]+$/)) {
         nameError.innerHTML = 'Write your full name';
         return false;
+    } else {
+        nameError.innerHTML = 'valid';
+        return true;
     }
-    nameError.innerHTML = 'valid';
-    return true;
 }
 
-nameInputField.addEventListener('keyup', () => {
-    validateName()
-});
+nameInputField.addEventListener('keyup', validateName);
+
+const validatePhone = () => {
+    const phoneNum = phoneInputField.value;
+
+    if (phoneNum.length == 0) {
+        phoneError.innerText = 'Phone number required';
+        return false;
+    }
+    if (!phoneNum.match(/^\d+$/)) {
+        phoneError.innerText = 'Only numbers are accepted';
+        return false;
+    }
+    if (phoneNum.length != 10) {
+        phoneError.innerText = 'Enter your full number';
+        return false;
+    }
+    if (phoneNum.length == 10) {
+        phoneError.innerText = 'valid';
+        return true;
+    }
+}
+
+phoneInputField.addEventListener('keyup', validatePhone);
