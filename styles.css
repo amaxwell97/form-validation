@@ -41,6 +41,7 @@ div.top-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 div input {
@@ -78,4 +79,11 @@ div #submit-button {
     width: 125px;
     margin-bottom: 20px;
     line-height: 45px;
+}
+
+span {
+    color: rgb(219, 65, 65);
+    position: absolute;
+    right: 0px;
+    bottom: 12px;
 }
