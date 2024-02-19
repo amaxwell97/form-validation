@@ -1,8 +1,15 @@
+const nameError = document.querySelector('#name-error');
+const phoneError = document.querySelector('#phone-error');
+const emailError = document.querySelector('#email-error');
+const messageError = document.querySelector('#message-error');
+
 const form = document.querySelector('form');
+
 const nameInputField = document.querySelector('#name-input');
 const phoneInputField = document.querySelector('#num-input');
 const emailInputField = document.querySelector('#email-input');
 const messageInputField = document.querySelector('#message-input');
+
 const submitButton = document.querySelector('#submit-button');
 
 function handleForm(e) {
@@ -25,6 +32,5 @@ const produceError = () => {
 
 
 submitButton.addEventListener('click', () => {
-    enteredBadName();
     produceError();
 })
