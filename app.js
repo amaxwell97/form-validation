@@ -17,7 +17,7 @@ function handleForm(e) {
 }
 
 const produceError = () => {
-    if (nameInputField.value == '' || phoneInputField.value == '' || emailInputField.value == '' || messageInputField.value == '') {
+    if ((nameInputField.value).length == 0 || (phoneInputField.value).length == 0 || (emailInputField.value).length == 0 || (messageInputField.value).length == 0) {
         const newPara = document.createElement('p');
         newPara.style.color = 'red';
         newPara.innerText = 'Please fix the errors';
@@ -29,8 +29,25 @@ const produceError = () => {
     }
 }
 
-
-
 submitButton.addEventListener('click', () => {
     produceError();
 })
+
+const validateName = () => {
+    const name = nameInputField.value;
+
+    if (name.length == 0) {
+        nameError.innerHTML = 'Name is required';
+        return false;
+    }
+    if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*&/)) {
+        nameError.innerHTML = 'Write your full name';
+        return false;
+    }
+    nameError.innerHTML = 'valid';
+    return true;
+}
+
+nameInputField.addEventListener('keyup', () => {
+    validateName()
+});
