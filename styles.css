@@ -54,6 +54,10 @@ div input {
     padding-bottom: 10px;
 }
 
+div input:focus {
+    outline: none;
+}
+
 div textarea {
     background-color: #FBF9F1;
     border-top: none;
