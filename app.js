@@ -118,3 +118,8 @@ const validateMessage = () => {
 }
 
 messageInputField.addEventListener('keyup', validateMessage);
+
+//Need to create function that validates all inputs are correct
+//If all are correct, the form submits.
+//If one or all need to be fixed, display the "Please fix errors" message
+//Need to move produceError to the end and update
