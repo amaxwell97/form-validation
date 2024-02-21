@@ -99,10 +99,12 @@ const validateMessage = () => {
         messageError.innerText = 'Message is required';
         return false;
     }
-    if (message.length <= 30) {
+    if (message.length < 30) {
         messageError.innerText = '30 or more characters required';
         return false;
     }
+    messageError.innerText = 'valid';
+    return true;
 }
 
 messageInputField.addEventListener('keyup', validateMessage);
