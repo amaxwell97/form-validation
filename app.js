@@ -39,15 +39,17 @@ const validateName = () => {
 
     if (name.length == 0) {
         nameError.innerHTML = 'Name is required';
+        nameError.classList.remove('valid-input');
         return false;
     }
     if (!name.match(/^[a-zA-Z]*\s{1}[a-zA-Z]+$/)) {
         nameError.innerHTML = 'Write your full name';
+        nameError.classList.remove('valid-input');
         return false;
-    } else {
-        nameError.innerHTML = 'valid';
-        return true;
-    }
+    } 
+    nameError.innerText = '\u2713';
+    nameError.classList.add('valid-input');
+    return true;
 }
 
 nameInputField.addEventListener('keyup', validateName);
@@ -57,20 +59,22 @@ const validatePhone = () => {
 
     if (phoneNum.length == 0) {
         phoneError.innerText = 'Phone number required';
+        phoneError.classList.remove('valid-input')
         return false;
     }
     if (!phoneNum.match(/^\d+$/)) {
         phoneError.innerText = 'Only numbers are accepted';
+        phoneError.classList.remove('valid-input')
         return false;
     }
     if (phoneNum.length != 10) {
         phoneError.innerText = 'Enter your full number';
+        phoneError.classList.remove('valid-input')
         return false;
     }
-    if (phoneNum.length == 10) {
-        phoneError.innerText = 'valid';
-        return true;
-    }
+    phoneError.innerText = '\u2713';
+    phoneError.classList.add('valid-input')
+    return true;
 }
 
 phoneInputField.addEventListener('keyup', validatePhone);
@@ -80,13 +84,16 @@ const validateEmail = () => {
 
     if (email.length == 0) {
         emailError.innerText = 'Enter an email';
+        emailError.classList.remove('valid-input');
         return false;
     }
     if (!email.match(/^\w+([\-_]*\w+)*@\w+([\-]?\w+)*\.(\w{2,3})$/)) {
         emailError.innerText = 'Email invalid';
+        emailError.classList.remove('valid-input');
         return false;
     }
-    emailError.innerText = 'valid';
+    emailError.innerText = '\u2713';
+    emailError.classList.add('valid-input');
     return true;
 }
 
@@ -97,13 +104,16 @@ const validateMessage = () => {
 
     if (message.length == 0) {
         messageError.innerText = 'Message is required';
+        messageError.classList.remove('valid-input');
         return false;
     }
     if (message.length < 30) {
         messageError.innerText = '30 or more characters required';
+        messageError.classList.remove('valid-input');
         return false;
     }
-    messageError.innerText = 'valid';
+    messageError.innerText = '\u2713';
+    messageError.classList.add('valid-input');
     return true;
 }
 
