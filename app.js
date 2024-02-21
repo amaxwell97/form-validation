@@ -79,7 +79,8 @@ const validateEmail = () => {
     const email = emailInputField.value;
 
     if (email.length == 0) {
-        emailError.innerText = 'Enter an email'
+        emailError.innerText = 'Enter an email';
+        return false;
     }
     if (!email.match(/^\w+([\-_]*\w+)*@\w+([\-]?\w+)*\.(\w{2,3})$/)) {
         emailError.innerText = 'Email invalid';
@@ -91,3 +92,17 @@ const validateEmail = () => {
 
 emailInputField.addEventListener('keyup', validateEmail);
 
+const validateMessage = () => {
+    const message = messageInputField.value;
+
+    if (message.length == 0) {
+        messageError.innerText = 'Message is required';
+        return false;
+    }
+    if (message.length <= 30) {
+        messageError.innerText = '30 or more characters required';
+        return false;
+    }
+}
+
+messageInputField.addEventListener('keyup', validateMessage);
