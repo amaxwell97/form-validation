@@ -78,6 +78,9 @@ phoneInputField.addEventListener('keyup', validatePhone);
 const validateEmail = () => {
     const email = emailInputField.value;
 
+    if (email.length == 0) {
+        emailError.innerText = 'Enter an email'
+    }
     if (!email.match(/^\w+([\-_]*\w+)*@\w+([\-]?\w+)*\.(\w{2,3})$/)) {
         emailError.innerText = 'Email invalid';
         return false;
@@ -87,3 +90,4 @@ const validateEmail = () => {
 }
 
 emailInputField.addEventListener('keyup', validateEmail);
+
