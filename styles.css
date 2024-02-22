@@ -67,6 +67,10 @@ div textarea {
     width: 325px;
 }
 
+div textarea:focus {
+    outline: none;
+}
+
 .submit-container {
     width: 100%;
     display: flex;
