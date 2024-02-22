@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
     box-sizing: border-box;
 }
 
@@ -16,7 +16,7 @@ body {
 
 form {
     width: 550px;
-    min-height: 450px;
+    min-height: 500px;
     background-color: #FBF9F1;
     margin: 100px auto 0;
     padding: 60px 40px 0px 30px;
@@ -79,13 +79,13 @@ div #submit-button {
     border-radius: 5px;
     color: #FBF9F1;
     font-size: 15px;
+    margin-bottom: 10px;
     height: 45px;
     width: 125px;
-    margin-bottom: 20px;
     line-height: 45px;
 }
 
-span {
+div > span {
     color: rgb(219, 65, 65);
     font-size: 12px;
     position: absolute;
@@ -103,4 +103,11 @@ span.valid-input {
     width: 20px;
     text-align: center;
     
+}
+
+form > span.validate-form {
+    color: rgb(219, 65, 65);
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
 }
