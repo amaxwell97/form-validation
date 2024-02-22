@@ -2,6 +2,7 @@ const nameError = document.querySelector('#name-error');
 const phoneError = document.querySelector('#phone-error');
 const emailError = document.querySelector('#email-error');
 const messageError = document.querySelector('#message-error');
+const formError = document.querySelector('#form-error');
 
 const form = document.querySelector('form');
 
@@ -12,26 +13,18 @@ const messageInputField = document.querySelector('#message-input');
 
 const submitButton = document.querySelector('#submit-button');
 
-function handleForm(e) {
-    e.preventDefault();
-}
-
-const produceError = () => {
-    if ((nameInputField.value).length == 0 || (phoneInputField.value).length == 0 || (emailInputField.value).length == 0 || (messageInputField.value).length == 0) {
-        const newPara = document.createElement('p');
-        newPara.style.color = 'red';
-        newPara.innerText = 'Please fix the errors';
-        form.appendChild(newPara);
-        form.addEventListener('submit', handleForm);
-        setTimeout( () => {
-            form.removeChild(newPara);
-        }, 3000)
-    }
-}
-
-submitButton.addEventListener('click', () => {
-    produceError();
-})
+// const produceError = () => {
+//     if ((nameInputField.value).length == 0 || (phoneInputField.value).length == 0 || (emailInputField.value).length == 0 || (messageInputField.value).length == 0) {
+//         const newPara = document.createElement('p');
+//         newPara.style.color = 'red';
+//         newPara.innerText = 'Please fix the errors';
+//         form.appendChild(newPara);
+//         form.addEventListener('submit', handleForm);
+//         setTimeout( () => {
+//             form.removeChild(newPara);
+//         }, 3000)
+//     }
+// }
 
 const validateName = () => {
     const name = nameInputField.value;
@@ -119,7 +112,21 @@ const validateMessage = () => {
 
 messageInputField.addEventListener('keyup', validateMessage);
 
-//Need to create function that validates all inputs are correct
-//If all are correct, the form submits.
-//If one or all need to be fixed, display the "Please fix errors" message
-//Need to move produceError to the end and update
+function handleForm(e) {
+    e.preventDefault();
+}
+
+const validateForm = () => {
+    if (validateName() !== true || validatePhone() !== true || validateEmail() !== true || validateMessage() !== true) {
+        form.addEventListener('submit', handleForm);
+        formError.innerText = 'Please fix the errors';
+        formError.classList.add('validate-form');
+        setTimeout(() => {
+            formError.style.display = 'none';
+        }, 3000);
+        return false;
+    }
+    form.removeEventListener('submit', handleForm);
+}
+
+submitButton.addEventListener('click', validateForm);
