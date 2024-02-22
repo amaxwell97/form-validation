@@ -1,31 +1,25 @@
+//Assigning error ids to variables
 const nameError = document.querySelector('#name-error');
 const phoneError = document.querySelector('#phone-error');
 const emailError = document.querySelector('#email-error');
 const messageError = document.querySelector('#message-error');
 const formError = document.querySelector('#form-error');
 
+//Assigning the form element to a variable
 const form = document.querySelector('form');
 
+//Assigning the inputs to variables
 const nameInputField = document.querySelector('#name-input');
 const phoneInputField = document.querySelector('#num-input');
 const emailInputField = document.querySelector('#email-input');
 const messageInputField = document.querySelector('#message-input');
 
+//Assigning the submit input to a variable
 const submitButton = document.querySelector('#submit-button');
 
-// const produceError = () => {
-//     if ((nameInputField.value).length == 0 || (phoneInputField.value).length == 0 || (emailInputField.value).length == 0 || (messageInputField.value).length == 0) {
-//         const newPara = document.createElement('p');
-//         newPara.style.color = 'red';
-//         newPara.innerText = 'Please fix the errors';
-//         form.appendChild(newPara);
-//         form.addEventListener('submit', handleForm);
-//         setTimeout( () => {
-//             form.removeChild(newPara);
-//         }, 3000)
-//     }
-// }
-
+//Validates that name field is not empty and that
+//what the user input has at least one letter for the first name,
+//a space, and at least one letter for the last name
 const validateName = () => {
     const name = nameInputField.value;
     console.log(name);
@@ -47,6 +41,9 @@ const validateName = () => {
 
 nameInputField.addEventListener('keyup', validateName);
 
+//Validates that phone field is not empty and that
+//what the user input contains all integers and
+//that the number is exactly 10 digits
 const validatePhone = () => {
     const phoneNum = phoneInputField.value;
 
@@ -72,6 +69,10 @@ const validatePhone = () => {
 
 phoneInputField.addEventListener('keyup', validatePhone);
 
+//Validates that email field is not empty and that
+//what the user input has at least 2 alphanumeric characters,
+//followed by an @ sign, a period, and 2 or 3 alphanumeric
+//characters at the end
 const validateEmail = () => {
     const email = emailInputField.value;
 
@@ -92,6 +93,8 @@ const validateEmail = () => {
 
 emailInputField.addEventListener('keyup', validateEmail);
 
+//Validates that message field is not empty and that
+//what the user input is more than 30 characters
 const validateMessage = () => {
     const message = messageInputField.value;
 
@@ -112,10 +115,13 @@ const validateMessage = () => {
 
 messageInputField.addEventListener('keyup', validateMessage);
 
+//When called, this function prevents the default option
 function handleForm(e) {
     e.preventDefault();
 }
 
+//Validates that the name, phone, email, and message fields
+//are validated. If so, the form is submitted
 const validateForm = () => {
     if (validateName() !== true || validatePhone() !== true || validateEmail() !== true || validateMessage() !== true) {
         form.addEventListener('submit', handleForm);
